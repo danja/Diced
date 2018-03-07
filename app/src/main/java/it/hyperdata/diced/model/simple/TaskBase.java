@@ -17,14 +17,56 @@ import it.hyperdata.diced.model.Task;
 public class TaskBase implements Task {
 
     private String id;
+    private String parent;
+    private char index;
     private Agent creator;
     private String title;
     private String description;
     private LocalDateTime createDate;
-    private LocalDateTime doneDate;
-    private LocalDateTime held;
+    private LocalDateTime closedDate;
+    private LocalDateTime heldDate;
     private Status status;
     private Set<String> tags = new HashSet<>();
+
+    @Override
+    public char getIndex() {
+        return index;
+    }
+
+    @Override
+    public void setIndex(char index) {
+        this.index = index;
+    }
+
+    @Override
+    public LocalDateTime getCreatedDate() {
+        return createDate;
+    }
+
+    @Override
+    public void setCreatedDate(LocalDateTime createdDate) {
+        this.createDate = createdDate;
+    }
+
+    @Override
+    public LocalDateTime getClosedDate() {
+        return closedDate;
+    }
+
+    @Override
+    public void setClosedDate(LocalDateTime closedDate) {
+        this.closedDate = closedDate;
+    }
+
+    @Override
+    public String getParent() {
+        return parent;
+    }
+
+    @Override
+    public void setParent(String parent) {
+        this.parent = parent;
+    }
 
     /**
      * {@inheritDoc}
@@ -75,24 +117,16 @@ public class TaskBase implements Task {
         this.createDate = createDate;
     }
 
+
+
     @Override
-    public LocalDateTime getDone() {
-        return doneDate;
+    public LocalDateTime getHeldDate() {
+        return heldDate;
     }
 
     @Override
-    public void setDone(LocalDateTime doneDate) {
-        this.doneDate = doneDate;
-    }
-
-    @Override
-    public LocalDateTime getHeld() {
-        return held;
-    }
-
-    @Override
-    public void setHeld(LocalDateTime held) {
-        this.held = held;
+    public void setHeldDate(LocalDateTime heldDate) {
+        this.heldDate = heldDate;
     }
 
     @Override

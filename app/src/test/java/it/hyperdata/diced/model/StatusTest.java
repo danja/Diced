@@ -10,6 +10,6 @@ import static org.junit.Assert.assertEquals;
 public class StatusTest {
     @Test
     public void stringValueWorks() throws Exception {
-        assertEquals("Done", Status.DONE.asString());
+        assertEquals("Done", Status.CLOSED.asString());
     }
 }

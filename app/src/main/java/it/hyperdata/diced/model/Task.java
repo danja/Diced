@@ -26,6 +26,63 @@ public interface Task {
     public void setId(String id);
 
     /**
+     * parent in hierarchy
+     *
+     * @return the parent
+     */
+    public String getParent();
+
+    /**
+     * parent in hierarchy
+     *
+     * @param parent the parent
+     */
+    public void setParent(String parent);
+
+
+    /**
+     * position of this task amongst its siblings
+     *
+     * @return the index
+     */
+    public char getIndex();
+
+    /**
+     * position of this task amongst its siblings
+     *
+     * @param index the index
+     */
+    public void setIndex(char index);
+
+    /**
+     * when this task was created
+     *
+     * @return creation datetime
+     */
+    public LocalDateTime getCreatedDate();
+
+    /**
+     * when this task was created
+     *
+     * @param createdDate creation datetime
+     */
+    public void setCreatedDate(LocalDateTime createdDate);
+
+    /**
+     * when this task was completed
+     *
+     * @return completion datetime
+     */
+    public LocalDateTime getClosedDate();
+
+    /**
+     * when this task was completed
+     *
+     * @param closedDate completion datetime
+     */
+    public void setClosedDate(LocalDateTime closedDate);
+
+    /**
      * the agent responsible for creating this task
      *
      * @return the agent
@@ -82,32 +139,18 @@ public interface Task {
     public void setCreated(LocalDateTime createDate);
 
     /**
-     * the date/time at which this task was completed
-     *
-     * @return the date/time
-     */
-    public LocalDateTime getDone();
-
-    /**
-     * the date/time at which this task was completed
-     *
-     * @param doneDate the date/time
-     */
-    public void setDone(LocalDateTime doneDate);
-
-    /**
      * the date/time at which this task was put on hold
      *
      * @return the date/time
      */
-    public LocalDateTime getHeld();
+    public LocalDateTime getHeldDate();
 
     /**
      * the date/time at which this task was put on hold
      *
-     * @param held the date/time
+     * @param heldDate the date/time
      */
-    public void setHeld(LocalDateTime held);
+    public void setHeldDate(LocalDateTime heldDate);
 
     /**
      * where this task is in its lifecycle

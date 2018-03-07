@@ -15,13 +15,13 @@ public enum Status {
     /**
      * labels a task that has been completed
      */
-    DONE("Done"),
+    CLOSED("Closed"),
 
 
     /**
      * labels a task that hasn't been completed but is currently inactive (hidden)
      */
-    HOLD("Hold");
+    HELD("Hold");
 
     private String name;
 
