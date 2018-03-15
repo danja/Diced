@@ -14,7 +14,7 @@ public class AgentBase implements Agent {
 
     @Override
     public String getId() {
-        return id;
+        return this.id;
     }
 
     @Override
@@ -24,7 +24,7 @@ public class AgentBase implements Agent {
 
     @Override
     public String getName() {
-        return name;
+        return this.name;
     }
 
     @Override
@@ -34,7 +34,7 @@ public class AgentBase implements Agent {
 
     @Override
     public String getNickname() {
-        return nickname;
+        return this.nickname;
     }
 
     @Override

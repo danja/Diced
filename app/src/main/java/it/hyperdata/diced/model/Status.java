@@ -21,7 +21,7 @@ public enum Status {
     /**
      * labels a task that hasn't been completed but is currently inactive (hidden)
      */
-    HELD("Hold");
+    HELD("Held");
 
     private String name;
 

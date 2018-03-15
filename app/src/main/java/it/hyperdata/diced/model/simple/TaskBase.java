@@ -30,7 +30,7 @@ public class TaskBase implements Task {
 
     @Override
     public char getIndex() {
-        return index;
+        return this.index;
     }
 
     @Override
@@ -40,7 +40,7 @@ public class TaskBase implements Task {
 
     @Override
     public LocalDateTime getCreatedDate() {
-        return createDate;
+        return this.createDate;
     }
 
     @Override
@@ -50,7 +50,7 @@ public class TaskBase implements Task {
 
     @Override
     public LocalDateTime getClosedDate() {
-        return closedDate;
+        return this.closedDate;
     }
 
     @Override
@@ -60,7 +60,7 @@ public class TaskBase implements Task {
 
     @Override
     public String getParent() {
-        return parent;
+        return this.parent;
     }
 
     @Override
@@ -73,7 +73,7 @@ public class TaskBase implements Task {
      */
     @Override
     public Agent getCreator() {
-        return creator;
+        return this.creator;
     }
 
     @Override
@@ -86,7 +86,7 @@ public class TaskBase implements Task {
      */
     @Override
     public String getTitle() {
-        return title;
+        return this.title;
     }
 
     /**
@@ -99,7 +99,7 @@ public class TaskBase implements Task {
 
     @Override
     public String getDescription() {
-        return description;
+        return this.description;
     }
 
     @Override
@@ -109,7 +109,7 @@ public class TaskBase implements Task {
 
     @Override
     public LocalDateTime getCreated() {
-        return createDate;
+        return this.createDate;
     }
 
     @Override
@@ -121,7 +121,7 @@ public class TaskBase implements Task {
 
     @Override
     public LocalDateTime getHeldDate() {
-        return heldDate;
+        return this.heldDate;
     }
 
     @Override
@@ -131,7 +131,7 @@ public class TaskBase implements Task {
 
     @Override
     public Status getStatus() {
-        return status;
+        return this.status;
     }
 
     @Override
@@ -141,7 +141,7 @@ public class TaskBase implements Task {
 
     @Override
     public Set<String> getTags() {
-        return tags;
+        return this.tags;
     }
 
     @Override
@@ -161,7 +161,7 @@ public class TaskBase implements Task {
 
     @Override
     public String getId() {
-        return id;
+        return this.id;
     }
 
     @Override

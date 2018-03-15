@@ -1,8 +1,7 @@
 package it.hyperdata.diced.model;
 
+import org.junit.Assert;
 import org.junit.Test;
-
-import static org.junit.Assert.assertEquals;
 
 /**
  * Created by danny on 06/03/18.
@@ -10,6 +9,6 @@ import static org.junit.Assert.assertEquals;
 public class StatusTest {
     @Test
     public void stringValueWorks() throws Exception {
-        assertEquals("Done", Status.CLOSED.asString());
+        Assert.assertEquals("Closed", Status.CLOSED.asString());
     }
 }
