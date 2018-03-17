@@ -6,9 +6,15 @@ import java.util.Set;
  * A container for tasks.
  * <p>
  * Created by danny on 06/03/18.
+ *
+ * TODO find() convenience methods
  */
 
-public interface TaskDB {
+public interface TaskTree {
+
+    public String getName();
+
+    public void setName(String name);
 
     /**
      * add a task to this container

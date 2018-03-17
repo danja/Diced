@@ -4,24 +4,33 @@ import java.util.HashSet;
 import java.util.Set;
 
 import it.hyperdata.diced.model.Task;
-import it.hyperdata.diced.model.TaskDB;
+import it.hyperdata.diced.model.TaskTree;
 
 /**
- * Simple object representation of a {TaskDB}
+ * Simple object representation of a {TaskTree}
  * <p>
  * Created by danny on 06/03/18.
  */
 
-public class TaskDBBase implements TaskDB {
+public class TaskTreeBase implements TaskTree {
 
-    private static final TaskDBBase instance = new TaskDBBase();
-    private Set<Task> tasks = new HashSet<>();
+    private String name;
 
-    private TaskDBBase() {
+    private Set<Task> tasks;
+
+    public TaskTreeBase(String name) {
+        this.name = name;
+        tasks = new HashSet<>();
     }
 
-    public static TaskDBBase getInstance() {
-        return instance;
+    @Override
+    public String getName() {
+        return name;
+    }
+
+    @Override
+    public void setName(String name) {
+        this.name = name;
     }
 
     @Override
