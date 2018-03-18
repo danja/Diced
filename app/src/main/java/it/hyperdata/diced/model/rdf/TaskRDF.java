@@ -5,6 +5,7 @@ import org.apache.jena.rdf.model.ModelFactory;
 import org.apache.jena.rdf.model.Resource;
 
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Set;
 
 import it.hyperdata.diced.model.Agent;
@@ -53,9 +54,9 @@ public class TaskRDF implements Task {
      * @return the parent
      */
     @Override
-    public String getParent() {
+    public Task getParent() {
         return null;
-    }
+    } // TODO
 
     /**
      * parent in hierarchy
@@ -63,7 +64,32 @@ public class TaskRDF implements Task {
      * @param parent the parent
      */
     @Override
-    public void setParent(String parent) {
+    public void setParent(Task parent) { // TODO
+
+    }
+
+    @Override
+    public void addChild(Task task) { // TODO
+
+    }
+
+    @Override
+    public void removeChild(Task task) { // TODO
+
+    }
+
+    @Override
+    public List<Task> getChildren() { // TODO
+        return null;
+    }
+
+    @Override
+    public boolean isRoot() { // TODO
+        return false;
+    }
+
+    @Override
+    public void setRoot(boolean isRoot) { // TODO
 
     }
 
@@ -75,7 +101,7 @@ public class TaskRDF implements Task {
     @Override
     public char getIndex() {
         return 0;
-    }
+    } // TODO
 
     /**
      * position of this task amongst its siblings
@@ -83,7 +109,7 @@ public class TaskRDF implements Task {
      * @param index the index
      */
     @Override
-    public void setIndex(char index) {
+    public void setIndex(char index) { // TODO
 
     }
 
@@ -283,5 +309,10 @@ public class TaskRDF implements Task {
     @Override
     public void removeTag(String tag) {
 
+    }
+
+    @Override
+    public String toTestString() {
+        return null;
     }
 }

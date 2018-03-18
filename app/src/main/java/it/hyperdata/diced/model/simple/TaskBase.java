@@ -1,7 +1,9 @@
 package it.hyperdata.diced.model.simple;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import it.hyperdata.diced.model.Agent;
@@ -17,7 +19,8 @@ import it.hyperdata.diced.model.Task;
 public class TaskBase implements Task {
 
     private String id;
-    private String parent;
+    private Task parent;
+    private List<Task> children = new ArrayList();
     private char index;
     private Agent creator;
     private String title;
@@ -27,6 +30,7 @@ public class TaskBase implements Task {
     private LocalDateTime heldDate;
     private Status status;
     private Set<String> tags = new HashSet<>();
+    private boolean isRoot = false;
 
     @Override
     public char getIndex() {
@@ -59,13 +63,38 @@ public class TaskBase implements Task {
     }
 
     @Override
-    public String getParent() {
+    public Task getParent() {
         return this.parent;
     }
 
     @Override
-    public void setParent(String parent) {
+    public void setParent(Task parent) {
         this.parent = parent;
+    }
+
+    @Override
+    public void addChild(Task task) {
+        this.children.add(task);
+    }
+
+    @Override
+    public void removeChild(Task task) {
+        this.children.remove(task);
+    }
+
+    @Override
+    public List<Task> getChildren() {
+        return this.children;
+    }
+
+    @Override
+    public boolean isRoot() {
+        return this.isRoot;
+    }
+
+    @Override
+    public void setRoot(boolean isRoot) {
+        this.isRoot = isRoot;
     }
 
     /**
@@ -118,7 +147,6 @@ public class TaskBase implements Task {
     }
 
 
-
     @Override
     public LocalDateTime getHeldDate() {
         return this.heldDate;
@@ -157,6 +185,26 @@ public class TaskBase implements Task {
     @Override
     public void removeTag(String tag) {
         this.tags.remove(tag);
+    }
+
+    /**
+     * id, parent id, child1, child2, child3...
+     * <p>
+     * generate a string version covering tree structure
+     *
+     * @return string version
+     */
+    @Override
+    public String toTestString() {
+        String string = "task: " + getId() + ", ";
+        if (getParent() != null) {
+            string += "parent: " + getParent().getId() + ", ";
+        }
+        string += "children: ";
+        for (Task task : getChildren()) {
+            string = string + task.getId() + " ";
+        }
+        return string;
     }
 
     @Override

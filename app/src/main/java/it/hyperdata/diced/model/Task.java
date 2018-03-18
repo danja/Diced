@@ -1,6 +1,7 @@
 package it.hyperdata.diced.model;
 
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -30,15 +31,24 @@ public interface Task {
      *
      * @return the parent
      */
-    public String getParent();
+    public Task getParent();
 
     /**
      * parent in hierarchy
      *
      * @param parent the parent
      */
-    public void setParent(String parent);
+    public void setParent(Task parent);
 
+    public void addChild(Task task);
+
+    public void removeChild(Task task);
+
+    public List<Task> getChildren();
+
+    public boolean isRoot();
+
+    public void setRoot(boolean isRoot);
 
     /**
      * position of this task amongst its siblings
@@ -192,5 +202,5 @@ public interface Task {
      */
     public void removeTag(String tag);
 
-
+    public String toTestString();
 }

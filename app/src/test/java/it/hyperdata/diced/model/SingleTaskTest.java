@@ -21,12 +21,12 @@ import static org.junit.Assert.assertTrue;
  * Created by danny on 07/03/18.
  */
 @RunWith(Parameterized.class)
-public class TaskTest {
+public class SingleTaskTest {
 
     Task task;
 
     String ID;
-    String PARENT;
+    Task PARENT;
     char INDEX;
     LocalDateTime CREATED;
     LocalDateTime HELD;
@@ -41,7 +41,7 @@ public class TaskTest {
     Status STATUS_HELD;
     Status STATUS_CLOSED;
 
-    public TaskTest(Task task) {
+    public SingleTaskTest(Task task) {
         this.task = task;
     }
 
@@ -50,6 +50,7 @@ public class TaskTest {
         return Arrays.asList(new Object[][]{
                 {new TaskBase()},
                 {new TaskBase()} // TODO replace this with RDF version
+                // TaskTree version
         });
     }
 
@@ -67,7 +68,8 @@ public class TaskTest {
         TAGS = new HashSet<>(Arrays.asList("one", "two", "three"));
         NEW_TAG = "four";
         OLD_TAG = "two";
-        PARENT = "http://parent";
+        PARENT = new TaskBase(); /// TODO will need tweaking for RDF
+        PARENT.setId("http://parent");
         INDEX = 42;
         CREATED = LocalDateTime.now();
         long offset = 3;

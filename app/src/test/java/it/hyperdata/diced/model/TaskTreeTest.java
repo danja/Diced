@@ -42,17 +42,17 @@ public class TaskTreeTest {
 
     public void addChildren(Task parent) {
         System.out.println("calls = " + calls++);
-        Task child;
+
         int nKids = random.nextInt(MAX_CHILDREN);
         System.out.println("nKids = " + nKids);
         for (int i = 0; i < nKids; i++) {
             System.out.println("kid = " + i);
             taskCount++;
             if (taskCount >= TOTAL_TASKS) break;
-            child = new TaskBase();
+            Task child = new TaskBase();
             child.setId(Integer.toString(taskCount));
             parent.addChild(child);
-            child.setParent(parent.getId());
+            child.setParent(parent);
             addChildren(child);
 
             // Log.d("test",child.toTestString());
